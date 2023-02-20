@@ -21,6 +21,6 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`iNoteBook backend listening on port http://localhost:${port}`)
+  console.log(`iNoteBook backend listening on port http://localhost:5000`)
 })
 
