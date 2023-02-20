@@ -69,17 +69,20 @@ router.post('/login', [
 
   const { email, password } = req.body
   try {
+    console.log("step1")
     let user = await User.findOne({ email })
     if (!user) {
       return res.status(400).json({success, error: "Please check your credentials" })
     }
-
+    console.log("step2")
+    
     const passwordCompare =  bcrypt.compare(password, user.password)
     if (!passwordCompare) {
       return res.status(401).json({success, error: "Please check your credentials" })
-
+      
     }
-
+    
+    console.log("step3")
     const data = {
       user: {
         id: user.id
